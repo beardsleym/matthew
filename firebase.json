@@ -7,12 +7,29 @@
         "destination": "/index.html"
       }
     ],
-    "headers": [{
-      "source" : "**",
-      "headers" : [{
-        "key" : "Cache-Control",
-        "value" : "max-age=86400"
-        }]
-      }]
+  
+"headers": [ {
+  "source" : "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+  "headers" : [ {
+    "key" : "Access-Control-Allow-Origin",
+    "value" : "*"
+  } ]
+}, {
+  "source" : "**/*.@(jpg|jpeg|gif|png|ico|webp|js)",
+  "headers" : [ {
+    "key" : "Cache-Control",
+    "value" : "max-age=604800"
+  } ]
+}, {
+  "source" : "**/*.@(html|css",
+  "headers" : [ {
+    "key" : "Cache-Control",
+    "value" : "max-age=7200"
+  } ]
+} ]
+
   }
 }
+
+
+
