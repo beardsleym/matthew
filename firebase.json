@@ -26,6 +26,12 @@
     "key" : "Cache-Control",
     "value" : "max-age=7200"
   } ]
+  }, {
+  "source" : "index.html",
+  "headers" : [ {
+    "key" : "Cache-Control",
+    "value" : "max-age=604800"
+  } ]
 } ]
 
   }
