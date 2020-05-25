@@ -1,0 +1,44 @@
+html,
+body {
+  color: #edf7ff;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: Montserrat, "Helvetica Neue", "Segoe UI", Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  overflow-y: auto;
+}
+
+a {
+  -webkit-transition: color 0.2s ease-out;
+  -moz-transition: color 0.2s ease-out;
+  transition: color 0.2s ease-out;
+  color: #edf7ff;
+}
+a:hover {
+  color: #ffba82;
+}
+h1 {
+  font-size: 9rem;
+}
+h2 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+img.portrait {
+  border-radius: 50%;
+  border: 10px solid #edf7ff;
+  margin: 2em 3em;
+  width: 300px;
+  height: 300px;
+}
+
+.center-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
