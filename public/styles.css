@@ -31,8 +31,7 @@ img.portrait {
   border-radius: 50%;
   border: 10px solid #edf7ff;
   margin: 2em 3em;
-  width: 300px;
-  height: 300px;
+  max-width: 33%;
 }
 
 .center-me {

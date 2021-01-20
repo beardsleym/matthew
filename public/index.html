@@ -10,6 +10,8 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="./styles.css">
+		<!-- <script src="https://unpkg.com/vue@next"></script> -->
+	
 		<script>
 			(function (i, s, o, g, r, a, m) {
 			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -24,7 +26,10 @@
 		</script>
 	</head>
 	<body>
-			<script src="./index.js" async defer></script>
+		<div id="app">
+
+		</div>
+			<script src="./index.js"></script>
 		<!--[if lt IE 7]>
 			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
 		<![endif]--><title>
@@ -35,15 +40,28 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 			integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		
-		<body>
 			<div class="center-me">
-				<img src="./matt.jpeg" class="portrait" alt="Portrait">
-				<h2>
-					<a rel="me" href="http://au.linkedin.com/in/matthewbeardsley" title="LinkedIn">
-						<span class="fab fa-linkedin"></span>
-					</a>
-				</h2>
-				
+				<img
+					class="portrait"
+					sizes="(max-width: 1400px) 100vw, 1400px"
+					srcset="
+					./images/matt_vcd2hp_c_scale,w_50.jpg 50w,
+					./images/matt_vcd2hp_c_scale,w_404.jpg 404w,
+					./images/matt_vcd2hp_c_scale,w_611.jpg 611w,
+					./images/matt_vcd2hp_c_scale,w_793.jpg 793w,
+					./images/matt_vcd2hp_c_scale,w_929.jpg 929w,
+					./images/matt_vcd2hp_c_scale,w_1052.jpg 1052w,
+					./images/matt_vcd2hp_c_scale,w_1176.jpg 1176w,
+					./images/matt_vcd2hp_c_scale,w_1290.jpg 1290w,
+					./images/matt_vcd2hp_c_scale,w_1396.jpg 1396w,
+					./images/matt_vcd2hp_c_scale,w_1400.jpg 1400w"
+					src="./images/matt_vcd2hp_c_scale,w_1400.jpg"
+					alt="">
+					<h2>
+						<a rel="me" href="http://au.linkedin.com/in/matthewbeardsley" title="LinkedIn">
+							<span class="fab fa-linkedin"></span>
+						</a>
+					</h2>
 			</div>
 	</body>
 </html>

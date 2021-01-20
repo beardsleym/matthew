@@ -1,3 +1,15 @@
+// const { createApp } = Vue;
+
+// const App = {
+//   data() {
+//     return {
+//       name: "Gregg",
+//     };
+//   },
+// };
+
+// createApp(App).mount("#app");
+
 colors = [
   "firebrick",
   "seagreen",
