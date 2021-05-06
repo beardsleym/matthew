@@ -3,11 +3,11 @@ const Card = (props) => {
   return ( 
     <div className="p-10">  
     <a href={link} target="_blank" rel="noreferrer">
-    <div className="max-w-sm rounded-md overflow-hidden shadow-lg">
-        <img className="w-full image-cover rounded-t-md" src={img} alt="RentReef"></img>  
+    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+        <img className="w-full" src={img} alt="RentReef"></img>  
       <div className="px-6 py-4">
-        <div className="font-bold text-gray-800 text-xl mb-2">{title}</div>
-        <p className="text-gray-600 text-sm block">
+        <div className="font-bold text-xl mb-2">{title}</div>
+        <p className="text-gray-700 text-base">
           {text}
         </p>
       </div>
