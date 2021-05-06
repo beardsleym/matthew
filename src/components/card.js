@@ -1,10 +1,11 @@
 const Card = (props) => {
   const {title, text, tags, img, link} = props.project
   return ( 
-    <div className="p-10">  
+    // Grid column
+    <div className="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">  
     <a href={link} target="_blank" rel="noreferrer">
-    <div className="max-w-sm rounded-md overflow-hidden shadow-lg">
-        <img className="w-full image-cover rounded-t-md" src={img} alt="RentReef"></img>  
+    <div className="flex-1 bg-white rounded-lg shadow-lg">
+        <img className="w-full image-cover rounded-t-lg transform transition hover:scale-105 duration-300 ease-in-out" src={img} alt="RentReef"></img>  
       <div className="px-6 py-4">
         <div className="font-bold text-gray-800 text-xl mb-2">{title}</div>
         <p className="text-gray-600 text-sm block">

@@ -13,26 +13,17 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-        <div class="p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {projects.map((project) => (
-            <Card project={project}/>
-          ))}
+      {/* Container */}
+      <div class="max-w-screen-xl mx-auto px-4">
+        {/* Grid wrapper */}
+        <div class="-mx-4 flex flex-wrap">
+          {/* <div class="p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"> */}
+            {projects.map((project) => (
+              <Card project={project}/>
+            ))}
+          {/* </div> */}
         </div>
-      <div className="center-me">
-				<img
-					className="w-32 h-32 md:w-48 rounded-full mx-auto"
-					sizes="(max-width: 1400px) 100vw, 1400px"
-					srcSet="./images/matt_vcd2hp_c_scale,w_1052.jpg 1052w"
-					src="./images/matt_vcd2hp_c_scale,w_1400.jpg"
-					alt=""></img>
-          <h1 className="text-lg font-semibold">Test</h1>
-					<h2>
-						<a rel="me" href="http://au.linkedin.com/in/matthewbeardsley" title="LinkedIn">
-							<span className="fab fa-linkedin"></span>
-						</a>
-					</h2>
-			</div>
-
+      </div>
     </div>
   );
 }
