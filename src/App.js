@@ -3,7 +3,7 @@ import Card from './components/Card';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Airtable from 'airtable'
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 const base = new Airtable({ apiKey: process.env.REACT_APP_AIRTABLE_KEY }).base(process.env.REACT_APP_AIRTABLE_BASE);
 
