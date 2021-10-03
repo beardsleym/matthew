@@ -4,19 +4,20 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 const navigation = [
-  { name: 'All Projects', href: '#', current: true },
-  { name: 'Angular', href: '#', current: false },
-  { name: 'React', href: '#', current: false },
-  { name: 'Vue', href: '#', current: false },
+  { name: 'All Projects', href: '#', value: 'title', current: true },
+  { name: 'Angular', href: '#', value: 'angular', current: false },
+  { name: 'React', href: '#', value: 'react', current: false },
+  { name: 'Vue', href: '#', value: 'vue', current: false },
+  { name: 'Events', value: 'olympics', href: '#', current: false },
 ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function Example(props) {
   return (
-    <Disclosure as="nav" className="bg-gray-700">
+    <Disclosure as="nav" className="">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -35,6 +36,16 @@ export default function Example() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <img
+                    className="block lg:hidden h-8 w-auto rounded-full"
+                    src="./images/matt.jpg"
+                    alt="Matt"
+                  />
+                  <img
+                    className="hidden lg:block h-8 w-auto rounded-full"
+                    src="./images/matt.jpg"
+                    alt="Matt"
+                  />
+                  {/* <img
                     className="block lg:hidden h-8 w-auto"
                     src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                     alt="Workflow"
@@ -43,45 +54,57 @@ export default function Example() {
                     className="hidden lg:block h-8 w-auto"
                     src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
                     alt="Workflow"
-                  />
+                  /> */}
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
+                      <a key={item.name} onClick={() => props.onNavChange(item.value)} className="text-gray-400 hover:text-gray-600 px-2 py-1">
                         {item.name}
                       </a>
+                      // <a
+                      //   key={item.name}
+                      //   href={item.href}
+                      //   className={classNames(
+                      //     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      //     'px-3 py-2 rounded-md text-sm font-medium'
+                      //   )}
+                      //   aria-current={item.current ? 'page' : undefined}
+                      // >
+                      //   {item.name}
+                      // </a>
                     ))}
                   </div>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                {/* <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                </button> */}
 
                 {/* Profile dropdown */}
+                <a href="https://linkedin.com/in/matthewbeardsley">
+                  <img
+                    className="w-6 mr-2"
+                    src="https://cdn.worldvectorlogo.com/logos/linkedin-icon.svg"
+                    alt=""
+                  />
+                </a>
+                <a href="https://github.com/beardsleym">
+                  <img
+                    className="w-6"
+                    src="https://cdn.worldvectorlogo.com/logos/github-icon.svg"
+                    alt=""
+                  />
+                </a>
                 <Menu as="div" className="ml-3 relative">
                   {({ open }) => (
                     <>
                       <div>
-                        <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        {/* <Menu.Button className="bg-white flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"> */}
                           <span className="sr-only">Open user menu</span>
-                          <img
-                            className="h-12 w-12 rounded-full"
-                            src="./images/matt.jpg"
-                            alt=""
-                          />
-                        </Menu.Button>
+                        {/* </Menu.Button> */}
                       </div>
                       <Transition
                         show={open}

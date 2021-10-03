@@ -5,13 +5,11 @@ import Navbar from './components/Navbar';
 import Airtable from 'airtable'
 import { useState, useEffect } from 'react';
 
-const base = new Airtable({ apiKey: 'keyiM69EH8mQrMOjp' }).base('appiq1nf2F0a1dSgp');
-
-
-
+const base = new Airtable({ apiKey: process.env.REACT_APP_AIRTABLE_KEY }).base(process.env.REACT_APP_AIRTABLE_BASE);
 
 function App() {
   const [projects, setProjects] = useState([]);
+  const [filter, setFilter] = useState('title');
   const [logos, setLogos] = useState([]);
   // const projects = [
   //   {title: 'RentReef', link: "https://rentreef.com", tags: ["angular","bootstrap", "product"], img: "images/rentreef.png", text:"Peer to peer rental marketplace to rent almost anything"},
@@ -21,14 +19,13 @@ function App() {
   //   {title: 'Beardsley.com.au', link: "https://beardsley.com.au", tags: ["react","tailwindCSS", "full-stack"], img: "images/profilesite.png", text:"Profile site, showcasing a few active projects over the past 12 months"}
   // ]
   useEffect(()=>{
+    setProjects([])
+    setLogos([])
     base('projects').select({view: 'Grid view'})
     .eachPage(
       (records, fetchNextPage) => {
         records.forEach((record) => {
-          setProjects((projects) => [
-            ...projects,
-            record.fields,
-          ]);
+          setProjects(projects => projects.concat(record.fields))
         })
         fetchNextPage();
       }
@@ -37,27 +34,24 @@ function App() {
     .eachPage(
       (records, fetchNextPage) => {
         records.forEach((record) => {
-          setLogos((logos) => [
-            ...logos,
-            record.fields,
-          ]);
+          setLogos(logos => logos.concat(record.fields))
         })
         fetchNextPage();
       }
-    );
-    console.log(logos)
-    console.log(projects)
+      );
   },[])
-  
+  const handleNavChange = (event) => {
+    setFilter(event)
+  }
   return (
     <div className="App">
-      <Navbar />
+      <Navbar onNavChange={handleNavChange}/>
       {/* Container */}
       <div className="max-w-screen-xl mx-auto px-4">
         {/* Grid wrapper */}
         <div className="-mx-4 flex flex-wrap">
-            {projects.map((project) => (
-              <Card key={project.title} project={project}/>
+            {projects.filter(project => project[filter]).map((project) => (
+              <Card key={project.title} project={project} logos={logos}/>
             ))}
         </div>
       </div>
