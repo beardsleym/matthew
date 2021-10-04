@@ -45,7 +45,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Navbar onNavChange={handleNavChange}/>
+      <Navbar onNavChange={handleNavChange} value={filter}/>
       {/* Container */}
       <div className="max-w-screen-xl mx-auto px-4">
         {/* Grid wrapper */}

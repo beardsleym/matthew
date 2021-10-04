@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+// import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 const navigation = [
   { name: 'All Projects', href: '#', value: 'title', current: true },
@@ -9,6 +9,7 @@ const navigation = [
   { name: 'React', href: '#', value: 'react', current: false },
   { name: 'Vue', href: '#', value: 'vue', current: false },
   { name: 'Events', value: 'olympics', href: '#', current: false },
+  { name: 'Film', value: 'australia-film', href: '#', current: false },
 ]
 
 function classNames(...classes) {
@@ -16,6 +17,14 @@ function classNames(...classes) {
 }
 
 export default function Example(props) {
+  navigation.forEach((item) => {
+    if (item.value == props.value) {
+      item.current = true
+    } else {
+      item.current = false
+    }
+  })
+  console.log(props.value)
   return (
     <Disclosure as="nav" className="">
       {({ open }) => (
@@ -59,15 +68,15 @@ export default function Example(props) {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a key={item.name} onClick={() => props.onNavChange(item.value)} className="text-gray-400 hover:text-gray-600 px-2 py-1">
+                      <a key={item.name} onClick={() => props.onNavChange(item.value)} className={classNames(item.current ? 'text-gray-900 ' : 'text-gray-400 hover:text-gray-600', 'px-2 py-1 font-medium')}>
                         {item.name}
                       </a>
                       // <a
                       //   key={item.name}
                       //   href={item.href}
                       //   className={classNames(
-                      //     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      //     'px-3 py-2 rounded-md text-sm font-medium'
+                      //     item.current ? 'text-gray-900 ' : 'text-gray-400 hover:text-gray-600',
+                      //     'px-2 py-1 text-sm font-medium'
                       //   )}
                       //   aria-current={item.current ? 'page' : undefined}
                       // >

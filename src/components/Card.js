@@ -11,9 +11,9 @@ const Card = (props) => {
   return ( 
     // Grid column
     <div className="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">  
-    <a href={link} target="_blank" rel="noreferrer">
-    <div className="flex-1 bg-white rounded-lg shadow-lg overflow-auto">
-        <img className="w-full image-cover rounded-t-lg transform transition hover:scale-105 duration-300 ease-in-out" src={img} alt="RentReef"></img>  
+    <a href={link} target="_blank" rel="noreferrer" className="h-full">
+    <div className="flex-1 h-full bg-white rounded-lg shadow-lg hover:shadow-2xl overflow-auto transition duration-200 ease-in-out">
+        <img className="w-full image-cover rounded-t-lg transform" src={img} alt="RentReef"></img>  
       <div className="px-6 py-4">
         <div className="font-bold text-gray-800 text-xl mb-2">{title}</div>
         <p className="text-gray-600 text-sm block">
