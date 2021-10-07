@@ -1,0 +1,176 @@
+{
+  "records": [
+    {
+      "id": "recCuwp91SS8ZblEx",
+      "fields": {
+        "cloudflare": true,
+        "vuetify": true,
+        "hubspot": true,
+        "stripe": true,
+        "img": "images/showcasebase.png",
+        "slack": true,
+        "text": "Showcase Base connects drama school graduates and the people who want to sign them, cast them, and work with them. All in one place, 24/7. 175 registered users and £50 MRR.",
+        "title": "ShowcaseBase",
+        "vue": true,
+        "link": "https://showcasebase.com",
+        "sendgrid": true,
+        "firebase": true
+      },
+      "createdTime": "2021-10-01T13:15:30.000Z"
+    },
+    {
+      "id": "recpnUrW1rbrsnxJ6",
+      "fields": {
+        "bootstrap": true,
+        "cloudflare": true,
+        "hubspot": true,
+        "Attachments": [
+          {
+            "id": "attGf1EXm0KCGwRrU",
+            "width": 1243,
+            "height": 1107,
+            "url": "https://dl.airtable.com/.attachments/0b79efb5a91785ab24ef38a96445050b/1f3db96a/Screenshot2021-10-04at11.06.29AM.png",
+            "filename": "Screenshot 2021-10-04 at 11.06.29 AM.png",
+            "size": 833808,
+            "type": "image/png",
+            "thumbnails": {
+              "small": {
+                "url": "https://dl.airtable.com/.attachmentThumbnails/d37850047f2dd350322905216a1f6d17/e8a0546c",
+                "width": 40,
+                "height": 36
+              },
+              "large": {
+                "url": "https://dl.airtable.com/.attachmentThumbnails/2975c480e8fb5cf61f23c80d1c7407ff/b8b212f2",
+                "width": 575,
+                "height": 512
+              },
+              "full": {
+                "url": "https://dl.airtable.com/.attachmentThumbnails/291c565f16f5863a8612e3a2777c3e82/3077cba2",
+                "width": 3000,
+                "height": 3000
+              }
+            }
+          }
+        ],
+        "stripe": true,
+        "img": "https://dl.airtable.com/.attachmentThumbnails/291c565f16f5863a8612e3a2777c3e82/3077cba2",
+        "text": "Peer to peer rental marketplace to rent almost anything",
+        "title": "RentReef",
+        "link": "https://rentreef.com",
+        "angular": true,
+        "sendgrid": true,
+        "firebase": true
+      },
+      "createdTime": "2021-10-01T11:10:42.000Z"
+    },
+    {
+      "id": "rec5WxQvSP5RUHoYl",
+      "fields": {
+        "cloudflare": true,
+        "vuetify": true,
+        "hubspot": true,
+        "img": "images/tinitoapp.png",
+        "text": "URL Link Shortener with dashboard, custom links and statistics. 2,500+ registered users.",
+        "title": "TiniTo",
+        "vue": true,
+        "cloudflare-pages": true,
+        "link": "https://tinito.app",
+        "sendgrid": true,
+        "firebase": true
+      },
+      "createdTime": "2021-10-01T11:10:42.000Z"
+    },
+    {
+      "id": "recAcSvsSz4XuFB9i",
+      "fields": {
+        "cloudflare": true,
+        "react": true,
+        "tailwindcss": true,
+        "img": "images/passwrd.png",
+        "text": "Password generator and strength checker submitted to Cloudflare for a summer development competition.",
+        "title": "Passwrd",
+        "cloudflare-pages": true,
+        "link": "https://passwrd.pages.dev",
+        "firebase": true
+      },
+      "createdTime": "2021-10-01T11:10:42.000Z"
+    },
+    {
+      "id": "recqeuaDPZWT7saGD",
+      "fields": {
+        "tailwindcss": true,
+        "img": "images/halalinvestors.png",
+        "text": "In addition to examining a company's business and finances, we look at its environmental and social impact as well as its track record for governance (ESG). I worded on functionality for experts to write and submit reports.",
+        "title": "HalalInvestors",
+        "vue": true,
+        "link": "https://halalinvestors.com",
+        "firebase": true
+      },
+      "createdTime": "2021-10-01T11:19:32.000Z"
+    },
+    {
+      "id": "rech2cTIaAqMzAg6I",
+      "fields": {
+        "Attachments": [
+          {
+            "id": "att4wCJhWXC83Dx6D",
+            "width": 1000,
+            "height": 625,
+            "url": "https://dl.airtable.com/.attachments/241594854dc29b36e2361b1152a8e806/82b8c334/1000-bg.jpg",
+            "filename": "1000-bg.jpg",
+            "size": 155975,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://dl.airtable.com/.attachmentThumbnails/478bdfa805e22a6b05d5b1f9c3afae94/42bf062b",
+                "width": 58,
+                "height": 36
+              },
+              "large": {
+                "url": "https://dl.airtable.com/.attachmentThumbnails/5c4e90abc591a6bd9be86cd339833414/15d2b1f8",
+                "width": 819,
+                "height": 512
+              },
+              "full": {
+                "url": "https://dl.airtable.com/.attachmentThumbnails/f2bf2ce57c3606ec9f338f3bca4a93e9/7dedd9ed",
+                "width": 3000,
+                "height": 3000
+              }
+            }
+          }
+        ],
+        "img": "https://dl.airtable.com/.attachmentThumbnails/f2bf2ce57c3606ec9f338f3bca4a93e9/7dedd9ed",
+        "text": "Technical Production Coordinator for all 4 Olympic Ceremonies. I managed a £10,000,000 budget for technical crew, worked on the helicopter stunt and was project lead for Olympic Rings in Space. \n",
+        "title": "London 2012 Olympic Ceremonies",
+        "link": "https://test.com",
+        "olympics": true
+      },
+      "createdTime": "2021-10-01T13:50:54.000Z"
+    },
+    {
+      "id": "recB6FdUq4rOqcqaP",
+      "fields": {
+        "img": "https://m.media-amazon.com/images/M/MV5BM2NjOTU2MzItNDJkNS00YzNkLTg3NzMtZjIwOTM1MWFmZGQ0XkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_FMjpg_UX1200_.jpg",
+        "text": "Extras Casting Coordinator on Truth feature film. Newsroom drama detailing the 2004 CBS 60 Minutes report investigating then-President George W. Bush's military service, and the subsequent firestorm of criticism that cost anchor Dan Rather and producer Mary Mapes their careers.",
+        "title": "Truth (2015) Feature Film",
+        "link": "https://www.imdb.com/title/tt3859076/",
+        "australia-film": true,
+        "ratpac": true,
+        "sony": true
+      },
+      "createdTime": "2021-10-03T13:39:20.000Z"
+    },
+    {
+      "id": "reckfz0HOtJmn4ctq",
+      "fields": {
+        "australia": true,
+        "img": "https://m.media-amazon.com/images/M/MV5BZjZjMDBiNjctZWVlYi00M2QyLWJmMWUtZmRjMzRhYWEwMDVjXkEyXkFqcGdeQXVyNTE5ODM4Nzg@._V1_FMjpg_UX1023_.jpg",
+        "text": "Travel Coordinator on Backtrack feature film. A psychotherapist has nightmares and sinister visions. Ghosts? Is it more than his daughter's death causing this? He returns to his childhood home and dad to put things to rest.",
+        "title": "Backtrack (2015) Feature Film",
+        "link": "https://www.imdb.com/title/tt2784936",
+        "australia-film": true
+      },
+      "createdTime": "2021-10-04T02:57:25.000Z"
+    }
+  ]
+}
