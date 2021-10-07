@@ -6,7 +6,9 @@ import Navbar from './components/Navbar';
 import { useState, useEffect } from 'react'
 import jsonProjects from './projects.json'
 import jsonLogos from './logos.json'
+import ReactGA from 'react-ga'
 
+ReactGA.initialize('UA-38989539-5')
 // const base = new Airtable({ apiKey: process.env.REACT_APP_AIRTABLE_KEY }).base(process.env.REACT_APP_AIRTABLE_BASE);
 
 function App() {
@@ -56,6 +58,11 @@ function App() {
   // },[])
   const handleNavChange = (event) => {
     setFilter(event)
+    ReactGA.event({
+      category: 'NAVIGATION',
+      action: 'FILTER_PROJECTS',
+      label: event
+    })
   }
   return (
     <div className="App">
