@@ -18,13 +18,12 @@ function classNames(...classes) {
 
 export default function Example(props) {
   navigation.forEach((item) => {
-    if (item.value == props.value) {
+    if (item.value === props.value) {
       item.current = true
     } else {
       item.current = false
     }
   })
-  console.log(props.value)
   return (
     <Disclosure as="nav" className="">
       {({ open }) => (
