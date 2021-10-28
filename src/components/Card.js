@@ -21,10 +21,10 @@ const Card = (props) => {
           <br />
         </p>
       </div>
-      <div className="px-6 pt-4 pb-2">
+      <div className="px-6 pt-4 pb-2 flex justify-evenly items-center">
         {logos.map((logo) => (
           <div key={logo.name} className="inline-block">
-            <img src={logo.img} alt={logo.name} className="w-8 mr-2"/>
+            <img src={logo.img} alt={logo.name} className="w-6 mr-2"/>
           </div>
         ))}
       </div>
