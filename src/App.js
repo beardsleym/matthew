@@ -66,17 +66,19 @@ function App() {
   }
   return (
     <div className="App">
-      <Navbar onNavChange={handleNavChange} value={filter}/>
-      {/* Container */}
-      <div className="max-w-screen-xl mx-auto px-4">
-        {/* Grid wrapper */}
-        <div className="-mx-4 flex flex-wrap">
-            {projects.filter(project => project[filter]).map((project) => (
-              <Card key={project.title} project={project} logos={logos}/>
-            ))}
+      <div className="flex flex-col h-screen ">
+        <Navbar onNavChange={handleNavChange} value={filter}/>
+        {/* Container */}
+        <div className="px-4 mb-auto max-w-screen-xl">
+          {/* Grid wrapper */}
+          <div className="-mx-4 flex flex-wrap">
+              {projects.filter(project => project[filter]).map((project) => (
+                <Card key={project.title} project={project} logos={logos}/>
+                ))}
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

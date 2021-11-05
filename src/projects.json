@@ -102,6 +102,7 @@
         "title": "RoundRack",
         "img": "images/roundrack.png",
         "vue": true,
+        "airtable": true,
         "firebase": true,
         "vuetify": true,
         "link": "https://roundrack-vuejs.web.app/",
