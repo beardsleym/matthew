@@ -11,7 +11,7 @@ const Card = (props) => {
   return ( 
     // Grid column
     <div className="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">  
-      <div className="card bordered shadow-2xl h-full">
+      <div className="card bordered shadow-xl h-full flex-1 hover:shadow-2xl transition duration-200 ease-in-out">
         <figure>
           <img className="object-cover object-top h-80 w-full" src={img} alt={title}></img> 
         </figure> 
@@ -20,7 +20,7 @@ const Card = (props) => {
             <div className="badge badge-info mx-2"><a href={link} target="_blank" rel="noreferrer" className="h-full">Visit site</a></div>
           </h2> 
           <p className="mb-auto">{text}</p> 
-          <div class="">
+          <div className="">
             <div className="flex items-center justify-center place-self-end">
               {logos.map((logo) => (
                 <div key={logo.name} className="inline-block">
