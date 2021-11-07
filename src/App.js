@@ -4,8 +4,8 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 // import Airtable from 'airtable'
 import { useState, useEffect } from 'react'
-import jsonProjects from './projects.json'
-import jsonLogos from './logos.json'
+// import jsonProjects from './projects.json'
+// import jsonLogos from './logos.json'
 import ReactGA from 'react-ga'
 
 ReactGA.initialize('UA-38989539-5')
@@ -22,16 +22,33 @@ function App() {
   //   {title: 'Halal Investors', link: "https://halalinvestors.com", tags: ["vue","tailwindCSS", "full-stack"], img: "images/halalinvestors.png", text:"In addition to examining a company's business and finances, we look at its environmental and social impact as well as its track record for governance (ESG). Our Halal Report Cards give you a quick summary of our comfort level investing in a company."},
   //   {title: 'Beardsley.com.au', link: "https://beardsley.com.au", tags: ["react","tailwindCSS", "full-stack"], img: "images/profilesite.png", text:"Profile site, showcasing a few active projects over the past 12 months"}
   // ]
-  //  JSON
+  //  LOCAL JSON
+  // useEffect(()=>{
+  //   setProjects([])
+  //   setLogos([])
+  //   jsonProjects.records.forEach((record) => {
+  //     setProjects(projects => projects.concat(record.fields))
+  //   })
+  //   jsonLogos.records.forEach((record) => {
+  //     setLogos(logos => logos.concat(record.fields))
+  //   })
+  // },[])
+  
+  //  CLOUDFLARE WORKERS KV JSON
   useEffect(()=>{
     setProjects([])
     setLogos([])
-    jsonProjects.records.forEach((record) => {
-      setProjects(projects => projects.concat(record.fields))
-    })
-    jsonLogos.records.forEach((record) => {
-      setLogos(logos => logos.concat(record.fields))
-    })
+    async function fetchData() {
+      try {
+        const response = await fetch("https://portfolio.uv.workers.dev/api")
+        const {logos, projects} = await response.json()
+        setProjects(projects)
+        setLogos(logos)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    fetchData();
   },[])
   // Air table API call, but API key is read and write.
   // useEffect(()=>{
