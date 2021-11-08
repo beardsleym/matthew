@@ -15,6 +15,7 @@ function App() {
   const [projects, setProjects] = useState([]);
   const [filter, setFilter] = useState('title');
   const [logos, setLogos] = useState([]);
+  const [gitMessage, setGitMessage] = useState('');
   // const projects = [
   //   {title: 'RentReef', link: "https://rentreef.com", tags: ["angular","bootstrap", "product"], img: "images/rentreef.png", text:"Peer to peer rental marketplace to rent almost anything"},
   //   {title: 'Showcase Base', link: "https://showcasebase.com", tags: ["nuxt","vuetify", "full-stack"], img: "images/showcasebase.png", text:"Showcase Base connects drama school graduates and the people who want to sign them, cast them, and work with them. All in one place, 24/7."},
@@ -33,11 +34,19 @@ function App() {
   //     setLogos(logos => logos.concat(record.fields))
   //   })
   // },[])
-  
+  const fetchGitCommits = async () => {
+    const response = await fetch("https://web.scraper.workers.dev/?url=https%3A%2F%2Fgithub.com%2Fbeardsleym&selector=.js-yearly-contributions++h2&scrape=text&pretty=true")
+    const {result} = await response.json()
+    const string = result[".js-yearly-contributions  h2"][0]
+    const position = string.indexOf(" ")
+    const output = [string.slice(0, position), " Git ", string.slice(position)].join('');
+    setGitMessage(output)
+  }
   //  CLOUDFLARE WORKERS KV JSON
   useEffect(()=>{
     setProjects([])
     setLogos([])
+    fetchGitCommits()
     async function fetchData() {
       try {
         const response = await fetch("https://portfolio.uv.workers.dev/api")
@@ -94,7 +103,7 @@ function App() {
                   ))}
             </div>
           </div>
-        <Footer />
+        <Footer gitMessage={gitMessage}/>
       </div>
     </div>
   );
