@@ -1,4 +1,4 @@
-name: Lint
+name: Test and Lint
 
 on:
   push:
@@ -26,12 +26,12 @@ jobs:
         uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install # will run `yarn install` command
-          
+
       - name: Run testing suite
         uses: borales/actions-yarn@v2.3.0
         with:
           cmd: test # will run `yarn test` command
-          
+
       - name: Run linters
         uses: borales/actions-yarn@v2.3.0
         with:
@@ -45,6 +45,6 @@ jobs:
           commit_message: yarn lint changes
 
           # Optional commit user and author settings
-          commit_user_name: My Lint Action 🦄 
+          commit_user_name: My Lint Action 🦄
           commit_user_email: bot@beardsley.com.au
           commit_author: Lint 🦄 <bot@beardsley.com.au>
