@@ -22,19 +22,23 @@ jobs:
         with:
           node-version: 14
 
-      - uses: borales/actions-yarn@v2.3.0
+      - name: Install packages
+        uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install # will run `yarn install` command
           
-      - uses: borales/actions-yarn@v2.3.0
+      - name: Run testing suite
+        uses: borales/actions-yarn@v2.3.0
         with:
           cmd: test # will run `yarn test` command
           
-      - uses: borales/actions-yarn@v2.3.0
+      - name: Run linters
+        uses: borales/actions-yarn@v2.3.0
         with:
           cmd: lint # will run `yarn lint` command
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Git apply automatic changes
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           # Optional, but recommended
           # Defaults to "Apply automatic changes"
