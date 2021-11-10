@@ -1,14 +1,13 @@
 import './App.css';
+import { useState, useEffect } from 'react';
+import ReactGA from 'react-ga';
 import Card from './components/Card';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-// import Airtable from 'airtable'
-import { useState, useEffect } from 'react'
 // import jsonProjects from './projects.json'
 // import jsonLogos from './logos.json'
-import ReactGA from 'react-ga'
 
-ReactGA.initialize('UA-38989539-5')
+ReactGA.initialize('UA-38989539-5', { testMode: process.env.NODE_ENV === 'test' });
 // const base = new Airtable({ apiKey: process.env.REACT_APP_AIRTABLE_KEY }).base(process.env.REACT_APP_AIRTABLE_BASE);
 
 function App() {
@@ -35,30 +34,32 @@ function App() {
   //   })
   // },[])
   const fetchGitCommits = async () => {
-    const response = await fetch("https://web.scraper.workers.dev/?url=https%3A%2F%2Fgithub.com%2Fbeardsleym&selector=.js-yearly-contributions++h2&scrape=text&pretty=true")
-    const {result} = await response.json()
-    const string = result[".js-yearly-contributions  h2"][0]
-    const position = string.indexOf(" ")
-    const output = [string.slice(0, position), " Git ", string.slice(position)].join('');
-    setGitMessage(output)
-  }
+    const response = await fetch(
+      'https://web.scraper.workers.dev/?url=https%3A%2F%2Fgithub.com%2Fbeardsleym&selector=.js-yearly-contributions++h2&scrape=text&pretty=true'
+    );
+    const { result } = await response.json();
+    const string = result['.js-yearly-contributions  h2'][0];
+    const position = string.indexOf(' ');
+    const output = [string.slice(0, position), ' Git ', string.slice(position)].join('');
+    setGitMessage(output);
+  };
   //  CLOUDFLARE WORKERS KV JSON
-  useEffect(()=>{
-    setProjects([])
-    setLogos([])
-    fetchGitCommits()
+  useEffect(() => {
+    setProjects([]);
+    setLogos([]);
+    fetchGitCommits();
     async function fetchData() {
       try {
-        const response = await fetch("https://portfolio.uv.workers.dev/api")
-        const {logos, projects} = await response.json()
-        setProjects(projects)
-        setLogos(logos)
+        const response = await fetch('https://portfolio.uv.workers.dev/api');
+        const { logos: kvLogos, projects: kvProjects } = await response.json();
+        setProjects(kvProjects);
+        setLogos(kvLogos);
       } catch (error) {
-        console.error(error)
+        // handle error
       }
     }
     fetchData();
-  },[])
+  }, []);
   // Air table API call, but API key is read and write.
   // useEffect(()=>{
   //   setProjects([])
@@ -83,27 +84,29 @@ function App() {
   //     );
   // },[])
   const handleNavChange = (event) => {
-    setFilter(event)
+    setFilter(event);
     ReactGA.event({
       category: 'NAVIGATION',
       action: 'FILTER_PROJECTS',
       label: event
-    })
-  }
+    });
+  };
   return (
     <div className="App">
       <div className="flex flex-col h-screen">
-        <Navbar onNavChange={handleNavChange} value={filter}/>
+        <Navbar onNavChange={handleNavChange} value={filter} />
         {/* Container */}
-          <div className="px-4 mb-auto max-w-screen-xl mx-auto w-full">
-            {/* Grid wrapper */}
-            <div className="-mx-4 flex flex-wrap">
-                {projects.filter(project => project[filter]).map((project) => (
-                  <Card key={project.title} project={project} logos={logos}/>
-                  ))}
-            </div>
+        <div className="px-4 mb-auto max-w-screen-xl mx-auto w-full">
+          {/* Grid wrapper */}
+          <div className="-mx-4 flex flex-wrap">
+            {projects
+              .filter((project) => project[filter])
+              .map((project) => (
+                <Card key={project.title} project={project} logos={logos} />
+              ))}
           </div>
-        <Footer gitMessage={gitMessage}/>
+        </div>
+        <Footer gitMessage={gitMessage} />
       </div>
     </div>
   );
