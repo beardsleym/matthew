@@ -9,6 +9,8 @@ const Card = ({ project, logos }) => {
     }
   });
 
+  const tooltipText = (name) => name.charAt(0).toUpperCase() + name.slice(1).replace('-', ' ');
+
   return (
     // Grid column
     <div className="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
@@ -29,15 +31,15 @@ const Card = ({ project, logos }) => {
           <div className="">
             <div className="flex items-center justify-center place-self-end">
               {filteredLogos.map((logo) => (
-                <div key={logo.name} className="inline-block">
+                <div
+                  key={logo.name}
+                  className="inline-block tooltip"
+                  data-tip={tooltipText(logo.name)}>
                   <img src={logo.img} alt={logo.name} className="w-6 mr-2" />
                 </div>
               ))}
             </div>
           </div>
-          {/* <div className="justify-end card-actions">
-            <button className="btn btn-secondary">View</button>
-          </div> */}
         </div>
       </div>
     </div>
