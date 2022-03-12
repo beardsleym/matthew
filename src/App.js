@@ -1,6 +1,8 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import ReactGA from 'react-ga';
+import * as Sentry from '@sentry/react';
+import { BrowserTracing } from '@sentry/tracing';
 import Card from './components/Card';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
@@ -9,6 +11,16 @@ import Navbar from './components/Navbar';
 
 ReactGA.initialize('UA-38989539-5', { testMode: process.env.NODE_ENV === 'test' });
 // const base = new Airtable({ apiKey: process.env.REACT_APP_AIRTABLE_KEY }).base(process.env.REACT_APP_AIRTABLE_BASE);
+
+Sentry.init({
+  dsn: 'https://3b4ad65761a0478e8f02e5a5029dc044@o1164852.ingest.sentry.io/6255718',
+  integrations: [new BrowserTracing()],
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0
+});
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -94,8 +106,7 @@ function App() {
   return (
     <div className="App">
       <div className="flex flex-col h-screen">
-        <Navbar onNavChange={handleNavChange} value={filter} />
-        {/* Container */}
+        <Navbar onNavChange={handleNavChange} value={filter} />;{/* Container */}
         <div className="px-4 mb-auto max-w-screen-xl mx-auto w-full">
           {/* Grid wrapper */}
           <div className="-mx-4 flex flex-wrap">
