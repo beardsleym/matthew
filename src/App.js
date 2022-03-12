@@ -13,7 +13,7 @@ ReactGA.initialize('UA-38989539-5', { testMode: process.env.NODE_ENV === 'test' 
 // const base = new Airtable({ apiKey: process.env.REACT_APP_AIRTABLE_KEY }).base(process.env.REACT_APP_AIRTABLE_BASE);
 
 Sentry.init({
-  dsn: 'https://3b4ad65761a0478e8f02e5a5029dc044@o1164852.ingest.sentry.io/6255718',
+  dsn: process.env.SENTRY_DSN,
   integrations: [new BrowserTracing()],
 
   // Set tracesSampleRate to 1.0 to capture 100%
