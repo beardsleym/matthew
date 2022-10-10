@@ -6,9 +6,9 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 
 const navigation = [
   { name: 'All Projects', href: '#', value: 'title', current: true },
-  { name: 'Angular', href: '#', value: 'angular', current: false },
   { name: 'React', href: '#', value: 'react', current: false },
   { name: 'Vue', href: '#', value: 'vue', current: false },
+  { name: 'Svelte', href: '#', value: 'svelte', current: false },
   { name: 'Events', value: 'olympics', href: '#', current: false },
   { name: 'Film', value: 'australia-film', href: '#', current: false }
 ];
