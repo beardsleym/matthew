@@ -46,12 +46,12 @@ export default function Example({ value, onNavChange }) {
                 <div className="flex-shrink-0 flex items-center">
                   <img
                     className="block lg:hidden h-8 w-auto rounded-full"
-                    src="./images/matt.jpg"
+                    src="https://azpebrodvq.cloudimg.io/v7/_beard_/images/matt.jpg?w=48&h=48"
                     alt="Matt"
                   />
                   <img
                     className="hidden lg:block h-8 w-auto rounded-full"
-                    src="./images/matt.jpg"
+                    src="https://azpebrodvq.cloudimg.io/v7/_beard_/images/matt.jpg?w=48&h=48"
                     alt="Matt"
                   />
                   {/* <img

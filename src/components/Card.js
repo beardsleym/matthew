@@ -16,7 +16,11 @@ const Card = ({ project, logos }) => {
     <div className="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
       <div className="card bordered shadow-xl h-full flex-1 hover:shadow-2xl transition duration-200 ease-in-out">
         <figure>
-          <img className="object-cover object-top h-80 w-full" src={img} alt={title} />
+          <img
+            className="object-cover object-top h-80 w-full"
+            src={`https://azpebrodvq.cloudimg.io/v7/_beard_/${img}?w=800&h=800`}
+            alt={title}
+          />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
