@@ -29,7 +29,7 @@ export default function Example({ value, onNavChange }) {
     <Disclosure as="nav" className="">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 dark:bg-slate-800">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
@@ -73,7 +73,9 @@ export default function Example({ value, onNavChange }) {
                         key={item.name}
                         onClick={() => onNavChange(item.value)}
                         className={classNames(
-                          item.current ? 'text-gray-900 ' : 'text-gray-400 hover:text-gray-600',
+                          item.current
+                            ? 'dark:text-white text-gray-900'
+                            : 'text-gray-400 hover:text-gray-600',
                           'px-2 py-1 font-medium'
                         )}>
                         {item.name}

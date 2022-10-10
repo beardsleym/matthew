@@ -14,7 +14,7 @@ const Card = ({ project, logos }) => {
   return (
     // Grid column
     <div className="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
-      <div className="card bordered shadow-xl h-full flex-1 hover:shadow-2xl transition duration-200 ease-in-out">
+      <div className="card dark:bg-slate-500 shadow-xl h-full flex-1 hover:shadow-2xl transition duration-200 ease-in-out">
         <figure>
           <img
             className="object-cover object-top h-80 w-full"
@@ -23,15 +23,15 @@ const Card = ({ project, logos }) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">
+          <h2 className="card-title dark:text-white">
             {title}
-            <div className="badge badge-info mx-2">
+            <div className="badge badge-info mx-2 dark:badge-warning">
               <a href={link} target="_blank" rel="noreferrer" className="h-full">
                 Visit site
               </a>
             </div>
           </h2>
-          <p className="mb-auto">{text}</p>
+          <p className="mb-auto dark:text-white">{text}</p>
           <div className="">
             <div className="flex items-center justify-center place-self-end">
               {filteredLogos.map((logo) => (
