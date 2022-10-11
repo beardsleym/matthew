@@ -104,11 +104,11 @@ function App() {
     });
   };
   return (
-    <div className="App">
-      <div className="flex flex-col h-screen">
+    <div className="App ">
+      <div className="flex flex-col h-full dark:bg-slate-700">
         <Navbar onNavChange={handleNavChange} value={filter} />
         {/* Container */}
-        <div className="px-4 mb-auto max-w-screen-xl mx-auto w-full dark:bg-slate-700">
+        <div className="px-4 mb-auto max-w-screen-xl mx-auto w-full">
           {/* Grid wrapper */}
           <div className="-mx-4 flex flex-wrap">
             {projects
