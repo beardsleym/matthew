@@ -25,7 +25,7 @@ const Card = ({ project, logos }) => {
         <div className="card-body">
           <h2 className="card-title dark:text-white">
             {title}
-            <div className="badge badge-info mx-2 dark:badge-warning">
+            <div className="badge badge-info mx-2 dark:badge-accent">
               <a href={link} target="_blank" rel="noreferrer" className="h-full">
                 Visit site
               </a>
